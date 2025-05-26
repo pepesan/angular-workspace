@@ -23,7 +23,29 @@ npm publish --access public
 ```shell
 npm install pepesan-module-lib --save
 ```
-### Inclusión en el app.module.ts
+### Inclusión del Módulo en el app.module.ts
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { PepesanModuleLibModule } from 'pepesan-module-lib';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PepesanModuleLibModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+``` 
+### Inclusión del servicio en el app.module.ts
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
