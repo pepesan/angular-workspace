@@ -84,6 +84,10 @@ export class AppComponent {
   }
 }
 ``` 
+### Uso del componente
+```html
+<lib-pepesan-module-lib></lib-pepesan-module-lib>
+```
 
 
 ## Biblioteca pepesan-my-lib
@@ -146,7 +150,37 @@ export class AppComponent {
   constructor(public pepesanMyLibService: PepesanMyLibService) {
   }
 }
-``` 
+```
+
+### Uso del componente
+Importamos el componente en el app.module.ts
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {PepesanMyLibComponent, PepesanMyLibService} from 'pepesan-my-lib';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PepesanMyLibComponent
+  ],
+  providers: [
+    PepesanMyLibService,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+Para luego usar el componente en el HTML del componente principal, por ejemplo `app.component.html`:
+```html
+<lib-pepesan-my-lib></lib-pepesan-my-lib>
+```
 
 
 
