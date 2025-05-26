@@ -35,6 +35,39 @@
           }
         }
       }
+    },
+    "pepesan-my-lib": {
+      "projectType": "library",
+      "root": "projects/pepesan-my-lib",
+      "sourceRoot": "projects/pepesan-my-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/pepesan-my-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pepesan-my-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/pepesan-my-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/pepesan-my-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

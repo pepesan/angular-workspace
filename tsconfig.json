@@ -17,6 +17,9 @@
     "paths": {
       "pepesan-module-lib": [
         "./dist/pepesan-module-lib"
+      ],
+      "pepesan-my-lib": [
+        "./dist/pepesan-my-lib"
       ]
     },
     "importHelpers": true,
